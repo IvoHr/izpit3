@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+
+
+       
+        label {
+            display: inline-block;
+            width: 10%;
+        }
+  
+    </style>
+</head>
+
+<body>
+    <h1>Filmoteka</h1>
+
+    <div id="filmitable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Zaglavie</th>
+                    <th>Godina</th>
+                    <th>Janr</th>
+                    <th>Rejisior</th>
+                    <th>Gledan</th>
+                    <th>Liubim</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button id="gledanfilm">Info Gledani</button>
+
+        <button id="liubimfilm">Info Liubimi</button>
+    </div>
+
+    <div id="gledaniFilmiTable" class="hide">
+        <table>
+            <thead>
+                <tr>
+                    <th>Zaglavie</th>
+                    <th>Godina</th>
+                    <th>Janr</th>
+                    <th>Rejisior</th>
+                    <th>
+                        <button id="closeGledaniTable">X</button>
+                    </th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="liubimiFilmiTable" class="hide">
+        <table>
+            <thead>
+                <tr>
+                    <th>Zaglavie</th>
+                    <th>Godina</th>
+                    <th>Janr</th>
+                    <th>Rejisior</th>
+                    <th>
+                        <button id="closeLiubimiTable">X</button>
+                    </th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+<div id='result'>
+    </div>
+    <div id = 'novFilm' >
+        <br>
+        <label for="title">Title:</label>
+		<input type="text" id="title" />
+		<br>
+		<label for="runtime">Runtime:</label>
+		<input type="text" id="runtime" />
+        <br>
+        <label for="year">Year:</label>
+		<input type="text" id="year" />
+		<br>
+		<label for="rate">Rate:</label>
+		<input type="text" id="rate" />
+		<br>
+        <label for="director">Director:</label>
+		<input type="text" id="director" />
+		<br>
+        <input id='butNovFilm'  type="submit" value="Add film">
+        <br>
+         <input id='iztrFilmi'  type="submit" value="Delete film">
+    </div>
+    
+    <script type="text/javascript" src="movieService.js"></script>
+    <script type="text/javascript" src="movieControler.js"></script>
+</body>
+
+</html>
