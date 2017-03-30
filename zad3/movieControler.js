@@ -221,4 +221,5 @@ function sortTable(increasing) {
         }
     }
 }
-document.getElementById('sortTable').addEventListener('click', sortTable, false);
+document.getElementById('sortTable').addEventListener('click', function () { sortTable(true); }, false);
+document.getElementById('sortTabledown').addEventListener('click', function () { sortTable(false); }, false);
