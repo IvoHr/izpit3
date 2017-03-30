@@ -182,3 +182,43 @@ document.getElementById('iztrFilmi').addEventListener('click', function (evt) {
     evt.preventDefault();
 
 }, false);
+
+
+
+
+function sortTable(increasing) {
+    var table = document.querySelector("table > tbody");
+    var switching = true;
+
+    while (switching) {
+
+        switching = false;
+        var rows = table.getElementsByTagName("tr");
+
+        var index;
+        for (index = 0; index < rows.length; index++) {
+
+            shouldSwitch = false;
+            var currentTitle = rows[index].getElementsByTagName("td")[0];
+            var nextTitle = rows[index + 1].getElementsByTagName("td")[0];
+
+            if (increasing) {
+                if (currentTitle.innerHTML.toLowerCase() > nextTitle.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            } else {
+                if (currentTitle.innerHTML.toLowerCase() < nextTitle.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+        }
+
+        if (shouldSwitch) {
+            rows[index].parentNode.insertBefore(rows[index + 1], rows[index]);
+            switching = true;
+        }
+    }
+}
+document.getElementById('sortTable').addEventListener('click', sortTable, false);
